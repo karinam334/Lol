@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LoL 🍓 Strawberry Edition</title>
+    <style>
+        :root {
+            --soft-pink: #FFD1DC;
+            --hot-pink: #FF69B4;
+            --strawberry-red: #FF4D4D;
+            --cream: #FFF5F7;
+            --border-pink: #FFB7C5;
+        }
+
+        body {
+            background-color: var(--soft-pink);
+            background-image: url('https://www.transparenttextures.com/patterns/puffy-puffs.png');
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #5D4037;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* --- BANNER SUPERIOR --- */
+        .banner-container {
+            width: 100%;
+            max-width: 1000px;
+            margin-top: 20px;
+            border: 5px solid var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(255, 105, 180, 0.3);
+        }
+
+        .banner-container img {
+            width: 100%;
+            display: block;
+        }
+
+        /* --- CONTENEDOR PRINCIPAL --- */
+        .main-card {
+            background: var(--cream);
+            width: 90%;
+            max-width: 950px;
+            margin: 30px 0;
+            padding: 40px;
+            border-radius: 30px;
+            border: 4px dashed var(--hot-pink);
+            position: relative;
+        }
+
+        h1, h2 {
+            color: var(--strawberry-red);
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .intro-text {
+            line-height: 1.8;
+            text-align: justify;
+            font-size: 1.1em;
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            border: 2px solid var(--soft-pink);
+        }
+
+        /* --- SECCIÓN VIDEO --- */
+        .video-section {
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 20px;
+            border: 5px solid var(--hot-pink);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+        }
+
+        /* --- TIERLIST --- */
+        .tierlist-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0 10px;
+            margin-top: 30px;
+        }
+
+        .tier-row {
+            background: white;
+            transition: transform 0.3s;
+        }
+
+        .tier-row:hover { transform: scale(1.02); }
+
+        .tier-rank {
+            width: 80px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 2em;
+            color: white;
+            border-radius: 10px 0 0 10px;
+        }
+
+        .rank-s { background: #FF4D4D; }
+        .rank-a { background: #FF69B4; }
+        .rank-b { background: #FFB7C5; }
+
+        .tier-content {
+            padding: 20px;
+            border: 2px solid var(--soft-pink);
+            border-left: none;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .champ-name {
+            font-weight: bold;
+            color: var(--hot-pink);
+            font-size: 1.2em;
+        }
+
+        footer {
+            padding: 20px;
+            color: var(--hot-pink);
+            font-weight: bold;
+        }
+
+        .strawberry-icon { width: 30px; vertical-align: middle; }
+    </style>
+</head>
+<body onclick="playMusic()">
+
+    <audio id="bgMusic" loop>
+        <source src="cancion.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="banner-container">
+        <img src="banner.png" alt="League of Legends Banner">
+    </div>
+
+    <div class="main-card">
+        <h1>Welcome to the Rift! 🍓 (◕‿◕✿)</h1>
+        
+        <div class="intro-text">
+            <p>¡Hola invocadora! Bienvenido a este rincón lleno de fresitas y magia. League of Legends no es solo un juego de estrategia, ¡es un mundo lleno de campeonas increíbles con estilos únicos! ˚ʚ♡ɞ˚ Aquí celebramos el poder femenino en la Grieta del Invocador, desde las magas más dulces hasta las guerreras más imponentes.</p>
+            <p>Pero no todo es color de rosa en la historia del competitivo. Abajo te compartimos un video súper interesante sobre un equipo que marcó un antes y un después en la narrativa de los esports femeninos. ¡Sigue leyendo para ver nuestra Tierlist exclusiva! 🍓✨</p>
+        </div>
+
+        <div class="video-section">
+            <h2>Special Feature: Historia de Esports 📺</h2>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/PwA5WRFxRrI" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <p style="margin-top: 15px; font-style: italic;">Analizamos la historia de <b>Vaevictis Esports</b>, un equipo que enfrentó grandes desafíos en la LCL rusa [00:02:15].</p>
+        </div>
+
+        <h2>🍓 Top Female Champions Tierlist 🍓</h2>
+        <table class="tierlist-table">
+            <tr class="tier-row">
+                <td class="tier-rank rank-s">S</td>
+                <td class="tier-content">
+                    <span class="champ-name">Lux & Ahri</span><br>
+                    <p>Las reinas indiscutibles. <b>Lux</b> ofrece un control de masas increíble y un burst de daño con su chispa final. <b>Ahri</b>, la vastaya de nueve colas, destaca por su movilidad y su capacidad de "pickear" enemigos con su beso. (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧</p>
+                </td>
+            </tr>
+            <tr class="tier-row">
+                <td class="tier-rank rank-a">A</td>
+                <td class="tier-content">
+                    <span class="champ-name">Seraphine & Kai'Sa</span><br>
+                    <p><b>Seraphine</b> es la soporte/maga perfecta para peleas en equipo gracias a su música definitiva. <b>Kai'Sa</b> es una de las ADCs más versátiles del juego, capaz de adaptarse a cualquier situación con su evolución de vacío. 🍓</p>
+                </td>
+            </tr>
+            <tr class="tier-row">
+                <td class="tier-rank rank-b">B</td>
+                <td class="tier-content">
+                    <span class="champ-name">Lulu & Jinx</span><br>
+                    <p>¡Pura diversión y caos! <b>Lulu</b> protege a sus aliados con polimorfia y escudos, mientras que <b>Jinx</b> limpia las líneas con sus ametralladoras y cohetes. ¡Ideales para jugar con amigas! (｡♥‿♥｡)</p>
+                </td>
+            </tr>
+        </table>
+
+        <div style="text-align: center; margin-top: 40px;">
+            <p>Recuerda: ¡Lo más importante es divertirse y brillar en la grieta! 🍓✨</p>
+            <p>Bye bye! (づ｡◕‿‿◕｡)づ</p>
+        </div>
+    </div>
+
+    <footer>
+        Hecho con amor y muchas fresas 🍓 | 2026 LoL Cute Girl Project
+    </footer>
+
+    <script>
+        function playMusic() {
+            var audio = document.getElementById("bgMusic");
+            if (audio.paused) { audio.play(); }
+        }
+    </script>
+</body>
+</html>
+
